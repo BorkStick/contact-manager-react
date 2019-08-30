@@ -14,14 +14,14 @@ import { Provider } from "./context";
 function App() {
   return (
     <Provider>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Header branding="Contact Manager" />
           <div className="container">
             <Switch>
               <Route exact path="/" component={Contacts} />
               <Route exact path="/contact/add" component={AddContact} />
-              <Route exact path="/contact/edit/:id" component={EditContact} />
+              <Route exact path="/contact/edit" component={EditContact} />
               <Route exact path="/about" component={About} />
               <Route component={NotFound} />
             </Switch>
